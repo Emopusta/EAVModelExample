@@ -24,7 +24,10 @@ public class AttributeConfiguration : IEntityTypeConfiguration<Attribute>
     {
         var attributes = new List<Attribute>
         {
-            new() { Id = 1, EntityId = 1, Name = "ColorName" },
+            new() { Id = 1, EntityId = 1, Name = "Temperature in degrees Celsius" },
+            new() { Id = 2, EntityId = 1, Name = "Presence of cough" },
+            new() { Id = 3, EntityId = 1, Name = "Type of Cough" },
+            new() { Id = 4, EntityId = 1, Name = "Heart rate in beats per minute" }
         };
         return attributes;
     }

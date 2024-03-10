@@ -22,7 +22,7 @@ namespace Persistence.ModelConfigurations
         {
             var entities = new List<Entity>
             {
-                new() { Id = 1, Name = "Color" }
+                new() { Id = 1, Name = "Patient Emre" }
             };
             return entities;
         }

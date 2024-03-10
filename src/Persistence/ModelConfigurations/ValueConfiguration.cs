@@ -24,10 +24,10 @@ namespace Persistence.ModelConfigurations
         {
             var values = new List<Value>
         {
-            new() { Id = 1, AttributeId = 1, Name = "Red" },
-            new() { Id = 2, AttributeId = 1, Name = "Green" },
-            new() { Id = 3, AttributeId = 1, Name = "Yellow" },
-            new() { Id = 4, AttributeId = 1, Name = "Blue" }
+            new() { Id = 1, AttributeId = 1, Name = "38.9" },
+            new() { Id = 2, AttributeId = 2, Name = "True" },
+            new() { Id = 3, AttributeId = 3, Name = "With phlegm, yellowish, streaks of blood" },
+            new() { Id = 4, AttributeId = 4, Name = "98" }
         };
             return values;
         }
