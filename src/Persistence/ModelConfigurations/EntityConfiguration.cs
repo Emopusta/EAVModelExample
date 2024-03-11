@@ -15,6 +15,8 @@ namespace Persistence.ModelConfigurations
             builder.Property(e => e.Name).HasColumnType("character varying").HasColumnName("Name");
             builder.HasIndex(e => e.Name).IsUnique();
 
+            builder.HasMany(e => e.Attributes).WithOne(a => a.Entity);
+
             builder.HasData(GetSeeds());
         }
 
