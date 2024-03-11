@@ -9,4 +9,5 @@ public class Attribute : BaseEntity
 
 
     public virtual Entity Entity { get; set; } = null!;
+    public virtual Value Value { get; set; } = null!;
 }
