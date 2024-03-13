@@ -5,5 +5,10 @@ namespace Application.Features.Entities.Commands.Create
     public class CreateEntityCommand : ICommandRequest<CreatedEntityResponse>
     {
         public string Name { get; set; }
+
+        public CreateEntityCommand(string name)
+        {
+            Name = name;
+        }
     }
 }

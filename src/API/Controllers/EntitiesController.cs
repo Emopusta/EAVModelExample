@@ -17,7 +17,7 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IDataResult<CreatedEntityResponse>> Create([FromBody] string name, CancellationToken cancellationToken)
         {
-            var command = new CreateEntityCommand() { Name = name };
+            var command = new CreateEntityCommand(name);
             var response = await Mediator.Send(command, cancellationToken);
             return Success(response);
         }
@@ -25,7 +25,7 @@ namespace API.Controllers
         [HttpDelete("{id:int}")]
         public async Task<IDataResult<DeleteEntityResponse>> Delete([FromRoute] int id,CancellationToken cancellationToken)
         {
-            var command = new DeleteEntityCommand() { Id = id };
+            var command = new DeleteEntityCommand(id);
             var response = await Mediator.Send(command, cancellationToken);
             return Success(response);
         }
@@ -49,7 +49,7 @@ namespace API.Controllers
         [HttpGet("{name}")]
         public async Task<IDataResult<GetDetailsByNameEntityResponse>> GetDetails(string name, CancellationToken cancellationToken)
         {
-            var query = new GetDetailsByNameEntityQuery() { Name = name };
+            var query = new GetDetailsByNameEntityQuery(name);
             var response = await Mediator.Send(query, cancellationToken);
             return Success(response);
         }
