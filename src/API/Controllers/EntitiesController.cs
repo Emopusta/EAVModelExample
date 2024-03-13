@@ -1,4 +1,5 @@
 ﻿using Application.Features.Entities.Commands.Create;
+using Application.Features.Entities.Commands.Delete;
 using Application.Features.Entities.Queries.GetAll;
 using Application.Features.Entities.Queries.GetDetailsByName;
 using Core.Application.Responses;
@@ -15,6 +16,14 @@ namespace API.Controllers
         public async Task<IDataResult<CreatedEntityResponse>> Create([FromBody] string name, CancellationToken cancellationToken)
         {
             var command = new CreateEntityCommand() { Name = name };
+            var response = await Mediator.Send(command, cancellationToken);
+            return Success(response);
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<IDataResult<DeleteEntityResponse>> Delete([FromRoute] int id,CancellationToken cancellationToken)
+        {
+            var command = new DeleteEntityCommand() { Id = id };
             var response = await Mediator.Send(command, cancellationToken);
             return Success(response);
         }
